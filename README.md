@@ -20,13 +20,13 @@ Dự án là một ứng dụng backend thương mại điện tử sử dụng 
 - Python-dotenv (quản lý biến môi trường)
 
 ## ⚙️ Hướng dẫn cài đặt
-# 1. Clone repository và vào thư mục dự án:
+### 1. Clone repository và vào thư mục dự án:
 ```python
 git clone <url_repository>
 cd ecommerce-backend
 ```
 
-# 2. Tạo virtual environment và kích hoạt:
+### 2. Tạo virtual environment và kích hoạt:
 ```python
 python -m venv venv
 # Windows:
@@ -35,12 +35,12 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-# 3. Cài đặt các thư viện cần thiết:
+### 3. Cài đặt các thư viện cần thiết:
 ```python
 pip install -r requirements.txt
 ```
 
-# 4. Thiết lập file .env:
+### 4. Thiết lập file .env:
 Tạo file .env trong thư mục gốc với nội dung sau:
 ```
 SECRET_KEY=your_django_secret_key
@@ -48,12 +48,12 @@ DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 ```
 
-# Cơ sở dữ liệu
+#### Cơ sở dữ liệu
 ```
 DATABASE_URL=mysql://username:password@localhost:3306/dbname
 ```
 
-# Email (SMTP - Gmail)
+#### Email (SMTP - Gmail)
 ```
 EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
 EMAIL_HOST=smtp.gmail.com
@@ -64,29 +64,31 @@ EMAIL_HOST_PASSWORD=your_gmail_app_password
 DEFAULT_FROM_EMAIL=your_email@gmail.com
 ```
 
-# Celery (Redis)
+#### Celery (Redis)
 ```
 CELERY_BROKER_URL=redis://localhost:6379/0
 CELERY_RESULT_BACKEND=redis://localhost:6379/0
 ```
-# 5. Tạo database và migrate:
+### 5. Tạo database và migrate:
 ```
 python manage.py migrate
 ```
-# 7. Khởi động Redis Server (cho Celery):
+### 6. Khởi động Redis Server (cho Celery):
 Chắc chắn Redis đang chạy ở địa chỉ localhost:6379.
 
-# 8. Khởi động Celery worker:
+### 7. Khởi động Celery worker:
 ```
 celery -A ecommerce worker -l info --pool=threads
 ```
 
-# 9. Khởi động Django server:
+### 8. Khởi động Django server:
 ```
 python manage.py runserver
 ```
 
-# 🧑‍💻 Tác giả
+### 🧑‍💻 Tác giả
 Họ tên: Nguyễn Thị Minh Thư
+
 MSSV: N21DCCN082
+
 Trường: Học viện Công nghệ Bưu chính Viễn thông cơ sở tại TPHCM
